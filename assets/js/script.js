@@ -224,6 +224,14 @@ $(".card .list-group").sortable({
         date: date
       });
     });
+    // trim down list's ID to match object property
+    var arrName = $(this)
+      .attr("id")
+      .replace("list-", "");
+
+    // update array on tasks object and save
+    tasks[arrName] = tempArr;
+    saveTasks();
     console.log(tempArr);
   }
 });
